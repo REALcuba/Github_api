@@ -503,7 +503,27 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"bNKaB":[function(require,module,exports) {
-console.log("Hello world!");
+const searchButton = ()=>{
+    const inputDiv = document.getElementById("inputDiv");
+    const searchButton1 = document.createElement("button");
+    searchButton1.classList.add("searchButton");
+    searchButton1.textContent = `<h1>Search</h1>`;
+    inputDiv.appendChild(searchButton1);
+    return searchButton1;
+};
+const createInput = ()=>{
+    const body = document.getElementById("body");
+    const inputDiv = document.createElement("div");
+    inputDiv.classList.add("inputDiv");
+    body.appendChild(inputDiv);
+    inputDiv.id = "inputDiv";
+    inputDiv.innerHTML = `<input type="text"/>` + `${searchButton()}`;
+};
+// const getuser = () => {
+// }
+// searchButton()
+createInput() // getuser()
+;
 
 },{}]},["7Z9ix","bNKaB"], "bNKaB", "parcelRequire716c")
 
