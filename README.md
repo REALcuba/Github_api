@@ -22,6 +22,6 @@ Success Screen
 If the searched username does exist: The searched user profile is displayed with all his repositories
 Error Screen
 If the searched username does not exist: An error is shown
-https://migracodebarcelona.slack.com/files/U01FN8VQKME/F03KMHT5HS9/image.png
-https://migracodebarcelona.slack.com/files/U01FN8VQKME/F03K9SY38KH/image.png
-https://migracodebarcelona.slack.com/files/U01FN8VQKME/F03KHSSQ6DU/image.png
+![image (2)](https://user-images.githubusercontent.com/61315204/174125007-b0e31cfb-ed45-4d27-ad9b-de1f79b1a9eb.png)
+![image (1)](https://user-images.githubusercontent.com/61315204/174125032-a7d5cd28-7b5b-43f7-858b-4d8b4d14c8fa.png)
+![image](https://user-images.githubusercontent.com/61315204/174125035-525ab79e-bfa6-42f9-b2a0-0e9471ccd8e7.png)
