@@ -3,4 +3,9 @@ h1 {
   font-family: cursive;
 }
 
+.inputDiv {
+  justify-content: center;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.78cc32dd.css.map */

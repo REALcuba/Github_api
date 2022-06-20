@@ -503,26 +503,86 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"bNKaB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _renderCharacter = require("./components/renderCharacter");
+var _renderCharacterDefault = parcelHelpers.interopDefault(_renderCharacter);
 const createInputEl = ()=>{
     const body = document.getElementById("body");
     const inputDiv = document.createElement("div");
     inputDiv.classList.add("inputDiv");
     body.appendChild(inputDiv);
     inputDiv.id = "inputDiv";
-    inputDiv.innerHTML = `<input  type="text"/>  ` + ` <button id = "searchButton">Search</button>`;
-    let inputVal = document.getElementById("inputDiv").value;
-    return inputVal;
+    inputDiv.innerHTML = `<input id="input" type="text"/>  ` + ` <button id = "searchButton">Search</button>`;
 };
 const searchButton = ()=>{
     const button = document.getElementById("searchButton");
     button.addEventListener("click", ()=>{
-        alert("Hey, someone clicked me!");
-        console.log("tomato");
+        let inputVal = document.getElementById("input").value;
+        (0, _renderCharacterDefault.default)();
+        // alert(inputVal);
+        console.log(inputVal);
+        inputVal = "";
     });
 };
 createInputEl();
 searchButton() // getuser()
 ;
+
+},{"./components/renderCharacter":"bGNE1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bGNE1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function createCharacterThumbnail() {
+    const body = document.getElementById("body");
+    const characterContainer = document.createElement("div");
+    characterContainer.classList.add("characterThumbnail");
+    body.appendChild(characterContainer);
+    characterContainer.id = "characterContainer";
+    let inputVal = document.getElementById("input").value;
+    characterContainer.innerHTML = `Hello ${inputVal}`;
+    // fetch("https://api.github.com/user/repos")
+    //     .then((res) => res.json())
+    //     .then((character) => console.log(character));
+    // renderCharacterThumbnail(characterContainer, character)
+    // );
+    return characterContainer;
+}
+// function renderCharacterThumbnail(characterContainer, character) {
+// characterContainer.innerHTML =
+//     `<img id = ${character.id} src = ${character.image}>`
+// `<h4>${character.name}</h4>` +
+// `<h5>${character.species} | ${character.status}</h5>`;
+// }
+exports.default = createCharacterThumbnail;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["7Z9ix","bNKaB"], "bNKaB", "parcelRequire716c")
 

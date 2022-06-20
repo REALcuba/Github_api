@@ -1,3 +1,4 @@
+import createCharacterThumbnail from "./components/renderCharacter"
 
 const createInputEl = () => {
 
@@ -8,20 +9,19 @@ const createInputEl = () => {
 
     inputDiv.id = "inputDiv";
 
-    inputDiv.innerHTML = `<input  type="text"/>  ` + ` <button id = "searchButton">Search</button>`;
-
-    let inputVal = document.getElementById("inputDiv").value;
-    return inputVal;
+    inputDiv.innerHTML = `<input id="input" type="text"/>  ` + ` <button id = "searchButton">Search</button>`;
 }
 
 
 const searchButton = () => {
     const button = document.getElementById("searchButton");
     button.addEventListener("click", () => {
-        alert('Hey, someone clicked me!');
-        console.log("tomato");
+        let inputVal = document.getElementById("input").value;
+        createCharacterThumbnail();
+        // alert(inputVal);
+        console.log(inputVal);
+        inputVal = "";
     })
-
 }
 
 

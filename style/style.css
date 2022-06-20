@@ -2,3 +2,8 @@ h1 {
     color: hotpink;
     font-family: cursive;
 }
+
+.inputDiv {
+    display: flex;
+    justify-content: center;
+}
