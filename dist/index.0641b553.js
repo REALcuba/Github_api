@@ -503,26 +503,25 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"bNKaB":[function(require,module,exports) {
-const searchButton = ()=>{
-    const inputDiv = document.getElementById("inputDiv");
-    const searchButton1 = document.createElement("button");
-    searchButton1.classList.add("searchButton");
-    searchButton1.textContent = `<h1>Search</h1>`;
-    inputDiv.appendChild(searchButton1);
-    return searchButton1;
-};
-const createInput = ()=>{
+const createInputEl = ()=>{
     const body = document.getElementById("body");
     const inputDiv = document.createElement("div");
     inputDiv.classList.add("inputDiv");
     body.appendChild(inputDiv);
     inputDiv.id = "inputDiv";
-    inputDiv.innerHTML = `<input type="text"/>` + `${searchButton()}`;
+    inputDiv.innerHTML = `<input  type="text"/>  ` + ` <button id = "searchButton">Search</button>`;
+    let inputVal = document.getElementById("inputDiv").value;
+    return inputVal;
 };
-// const getuser = () => {
-// }
-// searchButton()
-createInput() // getuser()
+const searchButton = ()=>{
+    const button = document.getElementById("searchButton");
+    button.addEventListener("click", ()=>{
+        alert("Hey, someone clicked me!");
+        console.log("tomato");
+    });
+};
+createInputEl();
+searchButton() // getuser()
 ;
 
 },{}]},["7Z9ix","bNKaB"], "bNKaB", "parcelRequire716c")
