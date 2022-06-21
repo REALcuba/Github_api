@@ -1,6 +1,7 @@
-h1 {
-  color: #ff69b4;
-  font-family: cursive;
+body {
+  flex-direction: column-reverse;
+  justify-content: center;
+  display: flex;
 }
 
 .inputDiv {

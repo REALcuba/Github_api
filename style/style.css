@@ -1,9 +1,11 @@
-h1 {
-    color: hotpink;
-    font-family: cursive;
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
 }
 
 .inputDiv {
     display: flex;
     justify-content: center;
+    /* flex-direction: column-reverse; */
 }
