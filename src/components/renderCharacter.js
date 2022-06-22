@@ -10,20 +10,31 @@ function createCharacterThumbnail() {
     document.getElementById("characterContainer")
     let inputVal = document.getElementById("input").value;
 
-    characterContainer.innerHTML = `Hello ${inputVal}`;
 
+    characterContainer.innerHTML = `<div>Hello ${inputVal}</div>`;
 
-    // fetch("https://api.github.com/user")
-    //     .then((res) => res.json())
-    //     .then((character) => console.log(character));
-    // renderCharacterThumbnail(characterContainer, character)
-    // );
-    inputVal = "";
+    // renderCharacterThumbnail(characterContainer, users)
+    // function renderCharacterThumbnail(characterContainer, users) {
+    //     // characterContainer.innerHTML =
+    //     //     `<div >${users} </div>`;
+
+    getUserList()
+    // }
+    characterContainer.innerHTML = `<div>Hello ${inputVal}</div>`;
     return characterContainer;
 }
+const getUserList = () => {
+    fetch(`https://api.github.com/users`)
+        .then((res) => res.json())
+        .then((users) => {
+            console.log(users)
+        }
 
-// function renderCharacterThumbnail(characterContainer, character) {
-// characterContainer.innerHTML =
-//     `<img id = ${character.id} src = ${character.image}>`;
-// }
+        )
+};
+function Error(error) {
+    console.log(error);
+}
+
+
 export default createCharacterThumbnail;

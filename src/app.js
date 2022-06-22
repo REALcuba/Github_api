@@ -1,5 +1,4 @@
-import createCharacterThumbnail from "./components/renderCharacter"
-
+import searchButton from "./components/searchButton/searchButton";
 const createInputEl = () => {
 
     const body = document.getElementById("body")
@@ -13,16 +12,7 @@ const createInputEl = () => {
 }
 
 
-const searchButton = () => {
-    const button = document.getElementById("searchButton");
-    button.addEventListener("click", () => {
-        let inputVal = document.getElementById("input").value;
-        createCharacterThumbnail();
-        // alert(inputVal);
-        console.log(inputVal);
-        inputVal = "";
-    })
-}
+
 
 
 

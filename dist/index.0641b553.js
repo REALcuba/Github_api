@@ -504,8 +504,8 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bNKaB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _renderCharacter = require("./components/renderCharacter");
-var _renderCharacterDefault = parcelHelpers.interopDefault(_renderCharacter);
+var _searchButton = require("./components/searchButton/searchButton");
+var _searchButtonDefault = parcelHelpers.interopDefault(_searchButton);
 const createInputEl = ()=>{
     const body = document.getElementById("body");
     const inputDiv = document.createElement("div");
@@ -514,47 +514,11 @@ const createInputEl = ()=>{
     inputDiv.id = "inputDiv";
     inputDiv.innerHTML = `<input id="input" type="text"/>  ` + ` <button id = "searchButton">Search</button>`;
 };
-const searchButton = ()=>{
-    const button = document.getElementById("searchButton");
-    button.addEventListener("click", ()=>{
-        let inputVal = document.getElementById("input").value;
-        (0, _renderCharacterDefault.default)();
-        // alert(inputVal);
-        console.log(inputVal);
-        inputVal = "";
-    });
-};
 createInputEl();
-searchButton() // getuser()
+(0, _searchButtonDefault.default)() // getuser()
 ;
 
-},{"./components/renderCharacter":"bGNE1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bGNE1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const body = document.getElementById("body");
-const characterContainer = document.createElement("div");
-characterContainer.classList.add("characterThumbnail");
-characterContainer.id = "characterContainer";
-body.appendChild(characterContainer);
-function createCharacterThumbnail() {
-    document.getElementById("characterContainer");
-    let inputVal = document.getElementById("input").value;
-    characterContainer.innerHTML = `Hello ${inputVal}`;
-    // fetch("https://api.github.com/user")
-    //     .then((res) => res.json())
-    //     .then((character) => console.log(character));
-    // renderCharacterThumbnail(characterContainer, character)
-    // );
-    inputVal = "";
-    return characterContainer;
-}
-// function renderCharacterThumbnail(characterContainer, character) {
-// characterContainer.innerHTML =
-//     `<img id = ${character.id} src = ${character.image}>`;
-// }
-exports.default = createCharacterThumbnail;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./components/searchButton/searchButton":"aSDYL"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -584,6 +548,48 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["7Z9ix","bNKaB"], "bNKaB", "parcelRequire716c")
+},{}],"aSDYL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _renderCharacter = require("../renderCharacter");
+var _renderCharacterDefault = parcelHelpers.interopDefault(_renderCharacter);
+const searchButton = ()=>{
+    const button = document.getElementById("searchButton");
+    button.addEventListener("click", (0, _renderCharacterDefault.default));
+};
+exports.default = searchButton;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../renderCharacter":"bGNE1"}],"bGNE1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const body = document.getElementById("body");
+const characterContainer = document.createElement("div");
+characterContainer.classList.add("characterThumbnail");
+characterContainer.id = "characterContainer";
+body.appendChild(characterContainer);
+function createCharacterThumbnail() {
+    document.getElementById("characterContainer");
+    let inputVal = document.getElementById("input").value;
+    characterContainer.innerHTML = `<div>Hello ${inputVal}</div>`;
+    // renderCharacterThumbnail(characterContainer, users)
+    // function renderCharacterThumbnail(characterContainer, users) {
+    //     // characterContainer.innerHTML =
+    //     //     `<div >${users} </div>`;
+    getUserList();
+    // }
+    characterContainer.innerHTML = `<div>Hello ${inputVal}</div>`;
+    return characterContainer;
+}
+const getUserList = ()=>{
+    fetch(`https://api.github.com/users`).then((res)=>res.json()).then((users)=>{
+        console.log(users);
+    });
+};
+function Error(error) {
+    console.log(error);
+}
+exports.default = createCharacterThumbnail;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7Z9ix","bNKaB"], "bNKaB", "parcelRequire716c")
 
 //# sourceMappingURL=index.0641b553.js.map
